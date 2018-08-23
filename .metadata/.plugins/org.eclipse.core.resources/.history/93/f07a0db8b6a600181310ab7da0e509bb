@@ -1,0 +1,29 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+/*
+ * Run Server application first.
+ */
+public class Server {
+
+	public static void main(String[] args){
+		
+		//try&catch
+		try {
+			System.out.println("*** Waiting for client ***");
+			//accept incoming connection
+			ServerSocket ss = new ServerSocket(9800);//bind port number
+			//wait until accept and using for communication
+			Socket soc = ss.accept();
+			System.out.println("*** Connection established ***");
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}
