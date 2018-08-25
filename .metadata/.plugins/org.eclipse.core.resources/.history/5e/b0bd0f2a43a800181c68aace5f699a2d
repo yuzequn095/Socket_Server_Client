@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.FlowLayout;
+import java.io.*;
+
+public class ChatClient {
+
+	static JFrame chatWindow = new JFrame("Chat Application");
+	static JTextArea chatArea = new JTextArea(22, 60);
+	static JTextField textField = new JTextField(40);
+	static JLabel blankLabel = new JLabel("        ");//between chat area and text field
+	static JButton sendButton = new JButton("Send");
+	
+	//constructor
+	ChatClient(){
+		
+		chatWindow.setLayout(new FlowLayout());
+		chatWindow.add(new JScrollPane(chatArea));
+		chatWindow.add(blankLabel);
+		chatWindow.add(textField);
+		chatWindow.add(sendButton);
+		
+		chatWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//close button
+		chatWindow.setSize(475, 500);
+		chatWindow.setVisible(true);//display
+		textField.setEditable(false);//can't enter anything before established
+		chatArea.setEditable(false);
+		
+		
+	}
+	
+	public static void main(String[] args) throws Exception{
+		ChatClient client = new ChatClient();
+		
+	}
+	
+}
